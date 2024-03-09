@@ -6,7 +6,7 @@ Testify is a web application that allows users to create, manage and take tests 
 - Jaroslaw Roszyk, 
 - Roman Samulski, 
 - Radoslaw Cinik.
-- 
+
 ## Functions
 
 - Creating tests: Users can add questions, answers and set answer keys.
