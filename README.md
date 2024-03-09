@@ -47,3 +47,6 @@ deactivate
 - Jaroslaw Roszyk
 - Roman Samulski 
 - Radoslaw Cinik
+
+## Facebook
+<a href="https://www.facebook.com/Testify.application" style="background-color: #3b5998; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Visit us on Facebook</a>
