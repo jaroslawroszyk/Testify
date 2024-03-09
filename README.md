@@ -7,12 +7,29 @@
 [![Project Status](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](#license)
 
-## Team: 
-- Jaroslaw Roszyk, 
-- Roman Samulski, 
-- Radoslaw Cinik.
+# Preparing the environment
 
-## Functions
+Activate virtual env and install requirements.txt script:
+
+`source init_environment.sh`
+
+## Alternative:
+
+```sh
+virtualenv venv -p python3
+source venv/bin/activate  # for Unix/Linux
+venv\Scripts\activate     # for Windows
+
+pip install -r requirements.txt  # for dependecies
+```
+
+## Deactivating env
+Just type:
+```sh
+deactivate
+```
+
+## Functions:
 
 - Creating tests: Users can add questions, answers and set answer keys.
 - Test Management: Ability to view, edit, delete and share tests.
@@ -26,3 +43,7 @@
 - Test categories: Create and assign tests to different categories.
 - Points for answers: Awarding points for correct answers, with possible sanctions for incorrect answers.
 
+## Team: 
+- Jaroslaw Roszyk
+- Roman Samulski 
+- Radoslaw Cinik
