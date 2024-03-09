@@ -1,4 +1,3 @@
-#TeamProject
 Team project
 
 Team: Jaroslaw Roszyk, 
