@@ -41,7 +41,7 @@ media
 
 # File-based project format
 *.iws
-
+venv/
 # IntelliJ
 out/
 

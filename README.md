@@ -4,6 +4,9 @@
   <p><strong>Testify is a web application that allows users to create, manage and take tests online. The application allows you to create tests from various categories, generate statistics, manage results and export results.</strong></p>
 </div>
 
+[![Project Status](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Clippy Check](https://github.com/jaroslawroszyk/PlanAhead/actions/workflows/CI-CLIPPY.yml/badge.svg)](https://github.com/jaroslawroszyk/PlanAhead/actions/workflows/CI-CLIPPY.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](#license)
 
 ## Team: 
 - Jaroslaw Roszyk, 
