@@ -2,36 +2,61 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Looping Video</title>
-<style>
-    body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    #video-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #video-container {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #content {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-<div id="video-container">
-    <video autoplay loop muted>
-        <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4">
-    </video>
-</div>
+
+    <div id="video-container">
+        <video autoplay muted>
+            <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="content">
+        <h1>TODO CONTENT</h1>
+    </div>
+
+    <script>
+        setTimeout(function () {
+            document.getElementById('video-container').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }, 1000);
+    </script>
+
 </body>
+
 </html>
