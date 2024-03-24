@@ -2,11 +2,25 @@
 {% load static %}
 
 {% block title %}
-  Index foo
+  Testify
+{% endblock %}
+
+{% block cssImport %}
+  <link rel="stylesheet" href="{% static 'css/LoadingPage.css' %}" />
 {% endblock %}
 
 {% block content %}
+  <div id="video-container">
+    <video autoplay muted>
+      <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4" />
+    </video>
+  </div>
+
   <h1>TODO CONTENT</h1>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/setTimeout.js' %}"></script>
 {% endblock %}
 
 {% block footer %}

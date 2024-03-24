@@ -8,25 +8,15 @@
       {% block title %}
       {% endblock %}
     </title>
-    <link rel="stylesheet" href="{% static 'css/LoadingPage.css' %}" />
-    <style></style>
+    {%block cssImport%}
+    {% endblock %}
   </head>
 
   <body>
-    <!-- There should be a loading Page on every page -->
-    <div id="video-container">
-      <video autoplay muted>
-        <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4" />
-      </video>
-    </div>
-
-    <div id="content" style="display: none;">
       {% block content %}
       {% endblock %}
-    </div>
 
     {% block scripts %}
-      <script src="{% static 'js/setTimeout.js' %}"></script>
     {% endblock %}
 
     {% block footer %}

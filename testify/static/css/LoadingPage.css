@@ -12,3 +12,18 @@ video {
     height: 100%;
     object-fit: cover;
 }
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
