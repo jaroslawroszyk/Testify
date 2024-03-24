@@ -1,32 +1,36 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/LoadingPage.css' %}" />
+    <style></style>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/LoadingPage.css' %}">
-    <style>
-    </style>
-</head>
-
-<body>
+  <body>
     <!-- There should be a loading Page on every page -->
     <div id="video-container">
-        <video autoplay muted>
-            <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4">
-        </video>
+      <video autoplay muted>
+        <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4" />
+      </video>
     </div>
 
     <div id="content" style="display: none;">
-        {% block content %}{% endblock %}
+      {% block content %}
+      {% endblock %}
     </div>
 
     {% block scripts %}
-    <script src="{% static 'js/setTimeout.js' %}"></script>
+      <script src="{% static 'js/setTimeout.js' %}"></script>
     {% endblock %}
 
-</body>
-
+    {% block footer %}
+      <footer></footer>
+    {% endblock %}
+  </body>
 </html>

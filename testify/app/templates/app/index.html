@@ -1,8 +1,14 @@
-{% extends "app/base.html" %}
+{% extends 'app/base.html' %}
 {% load static %}
 
-{% block title %}Index foo{% endblock %}
+{% block title %}
+  Index foo
+{% endblock %}
 
 {% block content %}
-    <h1>TODO CONTENT</h1>
+  <h1>TODO CONTENT</h1>
+{% endblock %}
+
+{% block footer %}
+  {% include 'app/footer.html' %}
 {% endblock %}
