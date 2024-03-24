@@ -21,6 +21,6 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path("", views.index, name="index"),
-
+    path("", views.index, name="index"),
+    path('your-url/', views.your_view, name='your_django_view'),
 ]
