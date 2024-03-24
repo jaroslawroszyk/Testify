@@ -1,6 +1,5 @@
 <div align="left">
-  <h1>Testify</h1>
-  <img title="plan_ahead" src="./assets/Testify_logo.png" align="left" width="100" style="padding-right: 0.5ch">
+  <img title="Testify" src="./assets/Testify_logo.png" align="left" width="100" style="padding-right: 0.5ch">
   <p><strong>Testify is a web application that allows users to create, manage and take tests online. The application allows you to create tests from various categories, generate statistics, manage results and export results.</strong></p>
   <br>
 </div>
