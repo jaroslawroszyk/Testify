@@ -1,10 +1,32 @@
-/* File serving as a base for inheritance */
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/LoadingPage.css' %}">
+    <style>
+    </style>
+</head>
 
-/*All content located between the {% block content %} and {% endblock content %} tags
- will be treated as the content of the 'content' block and will be inserted into the 
- appropriate place in the base template*/
- 
-<div>
-    {% block content %}{% endblock content %}
-</div>
+<body>
+    <!-- There should be a loading Page on every page -->
+    <div id="video-container">
+        <video autoplay muted>
+            <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="content" style="display: none;">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block scripts %}
+    <script src="{% static 'js/setTimeout.js' %}"></script>
+    {% endblock %}
+
+</body>
+
+</html>

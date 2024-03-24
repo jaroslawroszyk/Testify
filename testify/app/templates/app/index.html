@@ -1,43 +1,8 @@
+{% extends "app/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}Index foo{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <link rel="stylesheet" href="{% static 'css/LoadingPage.css' %}" />
-    <script src="{% static 'js/setTimeout.js' %}"></script>
-    <!-- THAT STYLE IS NEEDED? -->
-    <style> 
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        #content {
-            display: none;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div id="video-container">
-        <video autoplay muted>
-            <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4">
-        </video>
-    </div>
-
-    <div id="content">
-        <h1>TODO CONTENT</h1>
-    </div>
-
-</body>
-
-</html>
+{% block content %}
+    <h1>TODO CONTENT</h1>
+{% endblock %}
