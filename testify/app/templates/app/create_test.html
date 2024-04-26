@@ -1,0 +1,138 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}
+  Create Test
+{% endblock %}
+
+{% block content %}
+  <div class="content-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
+    <h1>Create Test</h1>
+    <form method="post" action="{% url 'create-test' %}" style="width: 100%;">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="test_name">Test Name:</label>
+        <input type="text" id="test_name" name="test_name" class="form-control" required>
+      </div>
+      <div id="questions-container">
+      </div>
+      <div class="button-container">
+        <button type="button" onclick="addQuestion()" class="btn btn-primary mb-3">Add Question</button>
+        <button type="submit" class="btn btn-success">Save Test</button>
+      </div>
+    </form>
+  </div>
+  <style>
+    .question {
+      background-color: #f8f9fa;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .answer-container {
+      margin-top: 10px;
+    }
+
+    .answer {
+      margin-top: 10px;
+    }
+
+    .answer-input {
+      width: calc(100% - 40px);
+    }
+
+    .add-answer-button {
+      margin-top: 10px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      margin: 0 10px;
+    }
+  </style>
+
+<script>
+  function addQuestion() {
+    var container = document.getElementById('questions-container');
+    var questionNumber = container.children.length + 1;
+
+    var questionDiv = document.createElement('div');
+    questionDiv.classList.add('question');
+
+    var questionLabel = document.createElement('label');
+    questionLabel.textContent = 'Question ' + questionNumber + ':';
+    var questionInput = document.createElement('input');
+    questionInput.type = 'text';
+    questionInput.name = 'question_' + questionNumber;
+    questionInput.classList.add('form-control');
+    questionInput.required = true;
+
+    questionDiv.appendChild(questionLabel);
+    questionDiv.appendChild(questionInput);
+
+    var answerContainer = document.createElement('div');
+    answerContainer.classList.add('answer-container');
+
+    for (var i = 1; i <= 2; i++) {
+      addAnswer(answerContainer, questionNumber, i);
+    }
+
+    questionDiv.appendChild(answerContainer);
+    
+    var addAnswerButton = document.createElement('button');
+    addAnswerButton.type = 'button';
+    addAnswerButton.textContent = 'Add Answer';
+    addAnswerButton.classList.add('btn', 'btn-info', 'ml-2', 'add-answer-button');
+    addAnswerButton.onclick = function() {
+      var answers = answerContainer.querySelectorAll('.answer');
+      var nextAnswerNumber = answers.length + 1;
+      addAnswer(answerContainer, questionNumber, nextAnswerNumber);
+    };
+
+    questionDiv.appendChild(addAnswerButton);
+    container.appendChild(questionDiv);
+  }
+
+  function addAnswer(container, questionNumber, answerNumber) {
+    var answerDiv = document.createElement('div');
+    answerDiv.classList.add('answer');
+
+    var answerLabel = document.createElement('label');
+    answerLabel.textContent = 'Answer ' + answerNumber + ':';
+    var answerInput = document.createElement('input');
+    answerInput.type = 'text';
+    answerInput.name = 'answer_' + questionNumber + '_' + answerNumber;
+    answerInput.classList.add('form-control', 'answer-input');
+    answerInput.required = true;
+
+    var correctAnswerCheckbox = document.createElement('input');
+    correctAnswerCheckbox.type = 'checkbox';
+    correctAnswerCheckbox.name = 'is_correct_' + questionNumber + '_' + answerNumber;
+    correctAnswerCheckbox.classList.add('correct-answer-checkbox');
+    correctAnswerCheckbox.id = 'is_correct_' + questionNumber + '_' + answerNumber;
+
+    var correctAnswerLabel = document.createElement('label');
+    correctAnswerLabel.textContent = 'Correct Answer';
+    correctAnswerLabel.htmlFor = 'is_correct_' + questionNumber + '_' + answerNumber;
+
+    correctAnswerCheckbox.addEventListener('change', function() {
+      this.value = this.checked;
+    });
+
+    answerDiv.appendChild(answerLabel);
+    answerDiv.appendChild(answerInput);
+    answerDiv.appendChild(correctAnswerCheckbox);
+    answerDiv.appendChild(correctAnswerLabel);
+    container.appendChild(answerDiv);
+  }
+</script>
+
+{% endblock %}

@@ -21,8 +21,8 @@
     <p class="lead">Welcome to Testify! This platform allows you to create and participate in tests.</p>
     <div class="buttons">
       <input type="text" id="code" class="form-control mb-2" placeholder="Enter Code">
-      <button onclick="window.location.href='enter_code_view'" class="btn btn-primary btn-lg mr-2">Enter Code</button>
-      <button onclick="window.location.href='create_test_view'" class="btn btn-success btn-lg">Create New Test</button>
+      <button onclick="window.location.href='enter_code_view'" class="btn btn-primary btn-lg mr-2">Go To Test</button>
+      <button onclick="window.location.href='{% url 'create-test' %}'" class="btn btn-success btn-lg">Create Test</button>
     </div>
   </div>
 {% endblock %}
