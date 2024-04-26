@@ -21,7 +21,7 @@
     <p class="lead">Welcome to Testify! This platform allows you to create and participate in tests.</p>
     <div class="buttons">
       <input type="text" id="code" class="form-control mb-2" placeholder="Enter Code">
-      <button onclick="window.location.href='enter_code_view'" class="btn btn-primary btn-lg mr-2">Go To Test</button>
+      <button onclick="goToTest()" class="btn btn-primary btn-lg mr-2">Go To Test</button>
       <button onclick="window.location.href='{% url 'create-test' %}'" class="btn btn-success btn-lg">Create Test</button>
     </div>
   </div>
@@ -29,6 +29,17 @@
 
 {% block scripts %}
   <script src="{% static 'js/setTimeout.js' %}"></script>
+  <script>
+    function goToTest() {
+      var code = document.getElementById('code').value;
+      // Check if code is provided
+      if (code.trim() !== "") {
+        window.location.href = "{% url 'enter_code_view' 12345 %}?code=" + code; // Replace '12345' with an actual test ID if needed
+      } else {
+        alert("Please enter a code.");
+      }
+    }
+  </script>
 {% endblock %}
 
 {% block footer %}
