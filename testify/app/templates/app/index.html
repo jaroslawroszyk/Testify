@@ -10,20 +10,21 @@
 {% endblock %}
 
 {% block content %}
-  <div id="video-container">
-    <video autoplay muted>
-      <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4" />
-    </video>
+  <div class="content-container">
+    <div id="video-container">
+      <video autoplay muted>
+        <source src="{% static 'videos/Testify.mp4' %}" type="video/mp4" />
+      </video>
+    </div>
+
+    <h1 class="display-4">Testify</h1>
+    <p class="lead">Welcome to Testify! This platform allows you to create and participate in tests.</p>
+    <div class="buttons">
+      <input type="text" id="code" class="form-control mb-2" placeholder="Enter Code">
+      <button onclick="window.location.href='enter_code_view'" class="btn btn-primary btn-lg mr-2">Enter Code</button>
+      <button onclick="window.location.href='create_test_view'" class="btn btn-success btn-lg">Create New Test</button>
+    </div>
   </div>
-
-  <h1>TODO CONTENT</h1>
-
-  <form action="{% url 'form_view' %}" method="post">
-    {% csrf_token %}
-    <label for="your_field">Your Field:</label>
-    <input type="text" id="your_field" name="your_field">
-    <button type="submit">Submit</button>
-  </form>
 {% endblock %}
 
 {% block scripts %}
