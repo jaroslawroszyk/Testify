@@ -15,10 +15,14 @@
         <input type="text" id="test_name" name="test_name" class="form-control" required>
       </div>
       <div id="questions-container">
+        <!-- Container for dynamically adding questions -->
       </div>
       <div class="button-container">
         <button type="button" onclick="addQuestion()" class="btn btn-primary mb-3">Add Question</button>
         <button type="submit" class="btn btn-success">Save Test</button>
+      </div>
+      <div class="code-container">
+        <p>Code for test: {{ test_code }}</p>
       </div>
     </form>
   </div>
